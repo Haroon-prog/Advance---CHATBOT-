@@ -35,9 +35,21 @@ graph.add_edge('chat_node',END)
 checkpointer = MemorySaver()
 chatbot = graph.compile(checkpointer=checkpointer)
 
+
 # ----------------    STREAMING FEATURE --------------------------
 # for message_chunk,metadata in chatbot.stream({"messages":HumanMessage(content="hello how are you")},
 #                config={'configurable':{'thread_id':101}},
 #                stream_mode="messages"):
 #     if message_chunk.content:
 #         print(message_chunk.content, end=" ", flush=True)
+
+
+
+#  ---------------- loading old chats with particulare thread id ---------
+# CONFIG = {'configurable':{'thread_id': '110'}}  
+# chatbot.invoke(
+#     {"messages":HumanMessage(content='yo how are you')},
+#     config=CONFIG
+# )
+
+# print(chatbot.get_state(config=CONFIG).values['messages'])      
