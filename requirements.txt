@@ -9,3 +9,5 @@ langchain-groq
 python-dotenv
 
 streamlit
+# database
+langgraph-checkpoint-sqlite

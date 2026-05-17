@@ -1,5 +1,5 @@
 import streamlit as st
-from backend import chatbot
+from database_backened import chatbot,retrive_old_threads
 from langchain_core.messages import HumanMessage
 import uuid
 
@@ -31,7 +31,7 @@ def load_conversation(thread_id):
 # _____________________ SESSION SET UP _____________________________
 
 if 'message_history' not in st.session_state:
-    st.session_state['message_history'] = []    #[{'role': 'user'/'assistant', 'content': 'message content'}, {...}]
+    st.session_state['message_history'] = []   #[{'role': 'user'/'assistant', 'content': 'message content'}, {...}]
 
 
 
@@ -39,7 +39,7 @@ if 'thread_id' not in st.session_state:
     st.session_state['thread_id'] = generate_thread_id()
 
 if 'chat_threads' not in st.session_state:
-    st.session_state['chat_threads'] = []
+    st.session_state['chat_threads'] = retrive_old_threads()
 
 add_thread(st.session_state['thread_id'])
 
