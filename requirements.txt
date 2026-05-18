@@ -11,3 +11,6 @@ python-dotenv
 streamlit
 # database
 langgraph-checkpoint-sqlite
+
+langchain-community
+ddgs
