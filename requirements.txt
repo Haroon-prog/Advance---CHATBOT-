@@ -14,3 +14,10 @@ langgraph-checkpoint-sqlite
 
 langchain-community
 ddgs
+
+faiss-cpu
+langchain-huggingface
+
+pypdf
+sentence-transformers
+torchvision
