@@ -77,7 +77,7 @@ class chatState(TypedDict):
 # Nodes 
 # ----------------------
 def chat_node(state : chatState) -> chatState:
-    """ LLM node that may answer to general messages and request a tool call """
+    """ LLM node that may answer to general messages or may request a tool call if necessary"""
     messages = state["messages"]
 
     response = llm_with_tools.invoke(messages)
